@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Asteroids Game</title>
+</head>
+
+<body>
+    <main>
+        <div class="canvasContainer">
+            <!-- <embed src="img/fundo.svg" alt="" id="background"> -->
+            <canvas id="canvas" style="background-color: rgb(132, 69, 143);"> Your browser does not support HTML5
+                Canvas.</canvas>
+        </div>
+
+
+        <div class="initialAnimation">
+            <img src="./img/2.png" alt="" class=" nave slide-in-bottom floating">
+            <p class="focus-in-expand font">ASTEROIDS</p>
+        </div>
+
+
+
+        <menu id="startMenu">
+            <div class="firstContainer">
+                <div class="container">
+                    <div class="block">
+                        <div class="btn" id="startButton">
+                            <h4>Start</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="block">
+                        <div class="btn" id="optionsButton">
+                            <h4>Options</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="block">
+                        <div class="btn btn2" id="quitButton" onclick="quit()">
+                            <h4>Quit</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </menu>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
