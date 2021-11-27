@@ -21,6 +21,11 @@ canvas.height = window.innerHeight
 // })
 
 
+setTimeout(function () {
+    location.href = '../Asteroids-Game-main/index.html';
+}, 7700);
+
+
 background.onload = function () {
     ctx.drawImage(background, 0, 0)
 }

@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 html { 
   width: 100%;
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
 
 * {
@@ -46,9 +47,7 @@ body .canvas {
 .canvasContainer {
   width: 100%;
   height: 100%;
-  position: absolute;
 }
-
 
 
 #startMenu {
@@ -93,11 +92,62 @@ body .canvas {
     font-size: 20px;
   }
 
+
+  .gameOver {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .highScore {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    padding: 20px;
+    color: white;
+    font-size: large;
+  }
+
+  .score {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+    padding: 20px;
+    color: white;
+    font-size: large;
+  }
+
+  .lives {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+    padding: 20px;
+    left: 200px;
+    color: white;
+    font-size: large;
+  }
+
   .firstContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     margin-top: 20%;
   }
   
@@ -159,7 +209,7 @@ body .canvas {
   
   .btn:hover {
     border: 2px solid #500243;
-    transform: translateX(10px);
+    transform: translateX(1px);
 
   }
 
@@ -170,21 +220,13 @@ body .canvas {
   
 
 
-
-
-
-
-
-
-
-
-
-
-
+  
 .initialAnimation {
   width: 100%;
   height: 100%;
   z-index: 1000;
+  position: absolute;
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,25 +235,47 @@ body .canvas {
 .nave {
   width: 240px;
   position: absolute;
+  animation: slide-in-bottom 2s ease 0s normal forwards, floating ease-in-out 10s infinite 2.1s normal forwards;
 }
 
+
+
 .font {
-  font-family: 'VCR OSD MONO';
   font-size: 60px;
-  font-weight: bold;
   color: white;
   position: absolute;
-  top: 25%;
+  top: 30%;
 }
 
 .focus-in-expand {
-  -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: focus-in-expand 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
 }
 
-.slide-in-bottom {
-  -webkit-animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+@keyframes floating {
+  0% {
+    transform: translate(0, -20px);
+  }
+
+  20% {
+    transform: translate(0px, -18px);
+  }
+
+  40% {
+    transform: translate(0px, -22px);
+  }
+
+  60% {
+    transform: translate(0px, -24px);
+  }
+
+  80% {
+    transform: translate(0px, -22px);
+  }
+
+  100% {
+    transform: translate(0, -20px);
+  }
 }
 
 /* .floating {
@@ -260,14 +324,12 @@ body .canvas {
 
 @keyframes slide-in-bottom {
   0% {
-      -webkit-transform: translateY(1000px);
       transform: translateY(1000px);
       opacity: 0;
   }
 
   100% {
-      -webkit-transform: translateY(0px);
-      transform: translateY(5px);
+      transform: translateY(-20px);
       opacity: 1;
   }
 }
@@ -301,22 +363,6 @@ body .canvas {
       opacity: 1;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*   FADE IN ANIMATIONS FOR DIFFERENT BROWSERS   */
